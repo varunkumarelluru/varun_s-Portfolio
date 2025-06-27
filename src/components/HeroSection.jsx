@@ -38,13 +38,20 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground opacity-0 animate-fade-in-delay-3">
-            I'm a passionate and motivated fresher with a strong interest in web development and modern technologies.
-            I enjoy building clean, responsive user interfaces and continuously learning to improve my skills.
+            I am a motivated and detail-oriented fresher seeking to build a successful career by leveraging my strong foundation in modern technologies. I am committed to continuous learning and dedicated to contributing meaningfully through innovative and efficient solutions.
           </p>
 
-          <div className="pt-4 opacity-0 animate-fade-in-delay-4">
+
+          <div className="pt-4 opacity-0 animate-fade-in-delay-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <a href="#projects" className="cosmic-button">
               View My Work
+            </a>
+            <a
+              href="/Varun-Kumar-Resume.pdf"
+              download
+              className="cosmic-button"
+            >
+              Download Resume
             </a>
           </div>
         </div>

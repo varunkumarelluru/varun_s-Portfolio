@@ -1,6 +1,5 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { BackgroundShapes } from "@/components/BackgroundShapes";
-import { StarBackground } from "@/components/StarBackground";
 import { useTheme } from "@/hooks/useTheme";
 
 const projects = [
@@ -40,7 +39,6 @@ export const ProjectsSection = () => {
   return (
     <section id="projects" className="relative py-20 bg-background">
       {theme === "light" && <BackgroundShapes />}
-      {theme === "dark" && <StarBackground />}
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           {" "}

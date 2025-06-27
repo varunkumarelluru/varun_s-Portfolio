@@ -11,8 +11,8 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import { BackgroundShapes } from "@/components/BackgroundShapes";
-import { StarBackground } from "@/components/StarBackground";
 import { useTheme } from "@/hooks/useTheme";
+import emailjs from 'emailjs-com';
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -21,22 +21,32 @@ export const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
-
-    setTimeout(() => {
+    emailjs.sendForm(
+      'service_65ohny9', // TODO: Replace with your EmailJS service ID
+      'template_iasa8ps', // TODO: Replace with your EmailJS template ID
+      e.target,
+      'Pa6ppW3q9D8xePtr3' // TODO: Replace with your EmailJS public key
+    )
+    .then((result) => {
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
       });
       setIsSubmitting(false);
-    }, 1500);
+      e.target.reset();
+    }, (error) => {
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again later.",
+      });
+      setIsSubmitting(false);
+    });
   };
 
   return (
     <section id="contact" className="relative py-20 bg-background">
       {theme === "light" && <BackgroundShapes />}
-      {theme === "dark" && <StarBackground />}
       <div className="container mx-auto max-w-3xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           Get In <span className="text-primary">Touch</span>
