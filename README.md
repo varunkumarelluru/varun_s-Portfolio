@@ -26,24 +26,6 @@ A modern, responsive personal portfolio website built with **React** and **Tailw
 
 ---
 
-## 📁 Project Folder Structure
-
-├── public/
-│ └── index.html
-├── src/
-│ ├── assets/ # Images & icons
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Page-level components
-│ ├── App.jsx # Root component
-│ └── main.jsx # Entry point
-├── tailwind.config.js # Tailwind config
-├── postcss.config.js # PostCSS config
-└── package.json # Project config and scripts
-
-
-
----
-
 ## ⚙️ Getting Started
 
 ### 📥 Clone the Repository
